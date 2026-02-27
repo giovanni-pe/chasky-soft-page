@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasky Soft S.R.L. | Soluciones Tecnológicas Innovadoras - RUC: 20615464768</title>
+    <meta name="description" content="Empresa líder en desarrollo de software, transformación digital y soluciones tecnológicas en Tingo María, Huánuco, Perú">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-cyan: #00F0FF;
+            --neon-blue: #0080FF;
+            --neon-purple: #8000FF;
+            --dark: #0A0E1A;
+            --darker: #050810;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--darker);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* ===== FUTURISTIC 3D BACKGROUND ===== */
+        .bg-3d-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+        
+        .stars::before,
+        .stars::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 
+                100px 200px white, 200px 100px white, 300px 300px white,
+                400px 150px white, 500px 250px white, 600px 100px white,
+                700px 350px white, 800px 200px white, 900px 400px white,
+                50px 450px white, 150px 350px white, 250px 450px white,
+                350px 150px white, 450px 300px white, 550px 400px white,
+                650px 250px white, 750px 150px white, 850px 350px white,
+                950px 100px white, 100px 50px white, 200px 400px white,
+                1100px 300px white, 1200px 150px white, 1300px 250px white,
+                1400px 400px white, 1500px 200px white;
+            animation: stars 3s ease-in-out infinite;
+        }
+        
+        @keyframes stars {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .grid-3d {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+            background-size: 80px 80px;
+            transform: perspective(800px) rotateX(60deg) translateZ(-100px);
+            animation: gridMove 30s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: perspective(800px) rotateX(60deg) translateZ(-100px) translateY(0); }
+            100% { transform: perspective(800px) rotateX(60deg) translateZ(-100px) translateY(80px); }
+        }
+        
+        .neon-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: orbPulse 8s ease-in-out infinite;
+        }
+        
+        .neon-orb:nth-child(3) {
+            width: 600px;
+            height: 600px;
+            background: var(--neon-cyan);
+            top: -10%;
+            left: -10%;
+        }
+        
+        .neon-orb:nth-child(4) {
+            width: 500px;
+            height: 500px;
+            background: var(--neon-blue);
+            top: 50%;
+            right: -10%;
+            animation-delay: 2s;
+        }
+        
+        .neon-orb:nth-child(5) {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-purple);
+            bottom: 10%;
+            left: 40%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes orbPulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+        }
+        
+        /* ===== GLASSMORPHISM STYLES ===== */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+        }
+        
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.2);
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: transparent !important;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            background: rgba(10, 14, 26, 0.7) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            font-size: 1rem;
+            margin: 0 15px;
+            padding: 8px 0 !important;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--neon-cyan) !important;
+        }
+        
+        .btn-futuristic {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            border: none;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            color: #000;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-futuristic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-futuristic:hover::before {
+            left: 100%;
+        }
+        
+        .btn-futuristic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
+        }
+        
+        /* ===== HERO SLIDER - CORREGIDO Y RESPONSIVO ===== */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        #heroCarousel {
+            height: 100vh;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-item {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(5, 8, 16, 0.9), rgba(10, 14, 26, 0.85));
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            bottom: auto;
+            right: auto;
+            z-index: 10;
+            text-align: center;
+            width: 90%;
+            max-width: 1000px;
+        }
+        
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 60px rgba(0, 240, 255, 0.5);
+            animation: fadeInUp 1s;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            animation: fadeInUp 1.2s;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-text {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.4s;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--glass-strong);
+            border-radius: 50%;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .carousel-control-prev {
+            left: 20px;
+        }
+        
+        .carousel-control-next {
+            right: 20px;
+        }
+        
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+            background: rgba(0, 240, 255, 0.2);
+        }
+        
+        .carousel-indicators {
+            bottom: 30px;
+        }
+        
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .carousel-indicators button.active {
+            background: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transform: scale(1.2);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 60px;
+        }
+        
+        /* ===== GLASSMORPHISM CARDS ===== */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .glass-card:hover::before {
+            left: 100%;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 20px 60px rgba(0, 240, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-icon {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .glass-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 20px var(--neon-cyan));
+        }
+        
+        .info-badge {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        
+        .info-badge:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan);
+            transform: translateX(10px);
+        }
+        
+        .info-badge strong {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+        
+        /* ===== TEAM CARDS ===== */
+        .team-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+        
+        .team-card:hover::after {
+            left: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 15px 50px rgba(0, 240, 255, 0.4);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            border: 3px solid rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-name {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--neon-cyan);
+        }
+        
+        .team-role {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            margin-bottom: 15px;
+        }
+        
+        .team-area {
+            background: rgba(0, 240, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        
+        /* ===== STATS ===== */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 128, 255, 0.05), rgba(128, 0, 255, 0.05));
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+        }
+        
+        .stat-label {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        
+        /* ===== FORM CONTROLS ===== */
+        .form-control, .form-select {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--neon-cyan);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(5, 8, 16, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            color: var(--neon-cyan);
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: var(--neon-cyan);
+            padding-left: 10px;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            transition: all 0.3s;
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.5);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .navbar-nav {
+                background: rgba(10, 14, 26, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 15px;
+            }
+            
+            .nav-link {
+                margin: 10px 0;
+            }
+            
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .carousel-control-prev {
+                left: 10px;
+            }
+            
+            .carousel-control-next {
+                right: 10px;
+            }
+            
+            .glass-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding-top: 60px;
+            }
+            
+            .btn-futuristic {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Futuristic 3D Background -->
+    <div class="bg-3d-container">
+        <div class="stars"></div>
+        <div class="grid-3d"></div>
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-rocket me-2"></i>CHASKY
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#frameworks">Frameworks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <a class="btn btn-futuristic" href="#contact">Cotizar Proyecto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section - CORREGIDO -->
+    <section id="home" class="hero-section p-0">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');">
+                    <div class="carousel-caption">
+                        <h1 class="hero-title">TRANSFORMACIÓN DIGITAL</h1>
+                        <p class="hero-subtitle">Impulsando el futuro tecnológico del Perú</p>
+                        <p class="hero-text">Soluciones innovadoras de software y tecnología para empresas que buscan liderar en la era digital</p>
+                        <a href="#about" class="btn btn-futuristic btn-lg">Descubre Más</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80');">
+                    <div class="carousel-caption">
+                        <h1 class="hero-title">DESARROLLO DE SOFTWARE</h1>
+                        <p class="hero-subtitle">Código que impulsa tu negocio</p>
+                        <p class="hero-text">Creamos aplicaciones web, móviles y sistemas empresariales con las últimas tecnologías</p>
+                        <a href="#services" class="btn btn-futuristic btn-lg">Ver Servicios</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80');">
+                    <div class="carousel-caption">
+                        <h1 class="hero-title">CIBERSEGURIDAD</h1>
+                        <p class="hero-subtitle">Protegemos tu información más valiosa</p>
+                        <p class="hero-text">Auditorías, pentesting y soluciones de seguridad informática de clase mundial</p>
+                        <a href="#contact" class="btn btn-futuristic btn-lg">Consultoría Gratis</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920&q=80');">
+                    <div class="carousel-caption">
+                        <h1 class="hero-title">CLOUD COMPUTING</h1>
+                        <p class="hero-subtitle">Infraestructura escalable en la nube</p>
+                        <p class="hero-text">Hosting, servidores, bases de datos y soluciones cloud con AWS, Azure y Google Cloud</p>
+                        <a href="#services" class="btn btn-futuristic btn-lg">Migra a la Nube</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sobre Chasky Soft S.R.L.</h2>
+            <p class="section-subtitle" data-aos="fade-up">Excelencia tecnológica desde Tingo María para el Perú y el mundo</p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card">
+                        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                        <h4>Nuestra Misión</h4>
+                        <p>Impulsar la transformación digital de organizaciones mediante soluciones tecnológicas innovadoras, seguras y de alta calidad.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card">
+                        <div class="card-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Nuestra Visión</h4>
+                        <p>Ser reconocidos al 2030 como la empresa líder en soluciones tecnológicas de la región Huánuco y una de las principales del Perú.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card">
+                        <div class="card-icon"><i class="fas fa-award"></i></div>
+                        <h4>Nuestros Valores</h4>
+                        <p>Excelencia, Innovación, Integridad, Colaboración, Compromiso y Calidad en todo lo que hacemos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h3 class="mb-4" style="color: var(--neon-cyan);">Información Corporativa</h3>
+                    <div class="info-badge"><strong>Razón Social:</strong> Chasky Soft S.R.L.</div>
+                    <div class="info-badge"><strong>RUC:</strong> 20615464768</div>
+                    <div class="info-badge"><strong>Tipo:</strong> S.R.L</div>
+                    <div class="info-badge"><strong>Domicilio:</strong> Tingo María, Rupa Rupa, Leoncio Prado, Huánuco - Perú</div>
+                    <div class="info-badge"><strong>Constitución:</strong> 29 de Enero de 2026</div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4" style="color: var(--neon-cyan);">Estructura Legal y Socios</h3>
+                    <div class="glass-card">
+                        <h5 class="mb-3"><i class="fas fa-users me-2"></i>Socios Fundadores</h5>
+                        <div class="mb-3">
+                            <strong style="color: var(--neon-cyan);">Giovanni Kuennen Perez Espinoza</strong>
+                            <p class="mb-1"><small>Socio - Gerente General (50%)</small></p>
+                            <p class="mb-0"><small>DNI: 71881893 | Ingeniero de Sistemas</small></p>
+                        </div>
+                        <hr style="border-color: rgba(0, 240, 255, 0.2);">
+                        <div>
+                            <strong style="color: var(--neon-cyan);">John Deivis Martin Pardo</strong>
+                            <p class="mb-1"><small>Socio (50%)</small></p>
+                            <p class="mb-0"><small>DNI: 46865665 | Ingeniero de Sistemas</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card mt-4">
+                        <h5 class="mb-3"><i class="fas fa-balance-scale me-2"></i>Equipo Legal y Contable</h5>
+                        <div class="mb-2">
+                            <i class="fas fa-gavel me-2" style="color: var(--neon-cyan);"></i>
+                            <strong>Doris Elizabeth Perez Espinoza</strong> - Asesoría Legal
+                        </div>
+                        <div>
+                            <i class="fas fa-calculator me-2" style="color: var(--neon-cyan);"></i>
+                            <strong>Edith Nora Perez Espinoza</strong> - Contabilidad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number">2026</div>
+                        <div class="stat-label">Fundación</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Calidad</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Soporte</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <div class="stat-number">+10</div>
+                        <div class="stat-label">Profesionales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+            <p class="section-subtitle" data-aos="fade-up">Soluciones tecnológicas integrales para tu empresa</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <h4 class="mb-3">Desarrollo de Software</h4>
+                        <p>Aplicaciones web, móviles y sistemas empresariales con Vue.js, React, Node.js, Python y más.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                        <h4 class="mb-3">Cloud Computing</h4>
+                        <p>Hosting, servidores, bases de datos y soluciones AWS, Azure y Google Cloud.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4 class="mb-3">Ciberseguridad</h4>
+                        <p>Auditorías, pentesting, gestión de riesgos y seguridad de la información.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h4 class="mb-3">Consultoría TI</h4>
+                        <p>Transformación digital, automatización de procesos y arquitectura de software.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4 class="mb-3">Aplicaciones Móviles</h4>
+                        <p>Apps nativas y multiplataforma para iOS y Android.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-database"></i></div>
+                        <h4 class="mb-3">Big Data & Analytics</h4>
+                        <p>Análisis de datos, business intelligence y visualización de información.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="background: rgba(0, 128, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestro Equipo</h2>
+            <p class="section-subtitle" data-aos="fade-up">Profesionales altamente calificados comprometidos con la excelencia</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
+                        <h4 class="team-name">Giovanni Kuennen Perez Espinoza</h4>
+                        <p class="team-role">Gerente General</p>
+                        <p><small>Ingeniero de Sistemas</small></p>
+                        <div class="team-area">Dirección Estratégica</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-user-cog"></i></div>
+                        <h4 class="team-name">John Deivis Martin Pardo</h4>
+                        <p class="team-role">Socio</p>
+                        <p><small>Ingeniero de Sistemas</small></p>
+                        <div class="team-area">Gestión de Proyectos</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-server"></i></div>
+                        <h4 class="team-name">Huaman Simon Paul Anderson</h4>
+                        <p class="team-role">Desarrollador Backend</p>
+                        <p><small>Node.js, Python</small></p>
+                        <div class="team-area">Backend</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card">
+                        <div class="team-avatar"><i class="fas fa-palette"></i></div>
+                        <h4 class="team-name">Noverlto Luis Sumaran Pimente</h4>
+                        <p class="team-role">Desarrollador Frontend</p>
+                        <p><small>Vue.js, React</small></p>
+                        <div class="team-area">Frontend</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-plug"></i></div>
+                        <h4 class="team-name">Edison Matias Bardales</h4>
+                        <p class="team-role">Integrador Junior</p>
+                        <p><small>APIs, DevOps</small></p>
+                        <div class="team-area">Integración</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-gavel"></i></div>
+                        <h4 class="team-name">Doris Elizabeth Perez Espinoza</h4>
+                        <p class="team-role">Asesoría Legal</p>
+                        <p><small>Derecho Corporativo</small></p>
+                        <div class="team-area">Legal</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="team-card">
+                        <div class="team-avatar"><i class="fas fa-calculator"></i></div>
+                        <h4 class="team-name">Edith Nora Perez Espinoza</h4>
+                        <p class="team-role">Contadora</p>
+                        <p><small>Contabilidad y Finanzas</small></p>
+                        <div class="team-area">Contabilidad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frameworks Section -->
+    <section id="frameworks">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Frameworks de Gobernanza</h2>
+            <p class="section-subtitle" data-aos="fade-up">Mejores prácticas internacionales en gestión de TI</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="glass-card text-center">
+                        <i class="fas fa-cogs fa-3x card-icon mb-3"></i>
+                        <h4>COBIT 2019</h4>
+                        <p>Gobernanza empresarial de TI</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="glass-card text-center">
+                        <i class="fas fa-server fa-3x card-icon mb-3"></i>
+                        <h4>ITIL 4</h4>
+                        <p>Gestión de servicios de TI</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="glass-card text-center">
+                        <i class="fas fa-project-diagram fa-3x card-icon mb-3"></i>
+                        <h4>TOGAF 9.2</h4>
+                        <p>Arquitectura empresarial</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="glass-card text-center">
+                        <i class="fas fa-tasks fa-3x card-icon mb-3"></i>
+                        <h4>PMBOK 7</h4>
+                        <p>Gestión de proyectos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: rgba(0, 128, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
+            <p class="section-subtitle" data-aos="fade-up">Estamos listos para impulsar tu transformación digital</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="glass-card mb-4">
+                        <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h5>Ubicación</h5>
+                        <p>Tingo María, Rupa Rupa<br>Leoncio Prado, Huánuco<br>Perú</p>
+                    </div>
+                    
+                    <div class="glass-card mb-4">
+                        <div class="card-icon"><i class="fas fa-phone"></i></div>
+                        <h5>Teléfono</h5>
+                        <p>+51 910 731 863<br>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                        <h5>Email</h5>
+                        soporte@chaskysoft.com</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="glass-card">
+                        <h4 class="mb-4">Solicita una Cotización</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nombre completo" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Teléfono">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Empresa">
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-select">
+                                        <option selected>Selecciona un servicio</option>
+                                        <option>Desarrollo de Software</option>
+                                        <option>Cloud Computing</option>
+                                        <option>Ciberseguridad</option>
+                                        <option>Consultoría TI</option>
+                                        <option>Aplicaciones Móviles</option>
+                                        <option>Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" placeholder="Describe tu proyecto"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-futuristic btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="footer-title">CHASKY SOFT S.R.L.</h3>
+                    <p>Empresa peruana líder en desarrollo de software y transformación digital.</p>
+                    <p><strong>RUC:</strong> 20615464768</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="footer-title">Empresa</h5>
+                    <a href="#about" class="footer-link">Nosotros</a>
+                    <a href="#team" class="footer-link">Equipo</a>
+                    <a href="#frameworks" class="footer-link">Frameworks</a>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="footer-title">Servicios</h5>
+                    <a href="#services" class="footer-link">Desarrollo Web</a>
+                    <a href="#services" class="footer-link">Apps Móviles</a>
+                    <a href="#services" class="footer-link">Cloud</a>
+                    <a href="#services" class="footer-link">Ciberseguridad</a>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="footer-title">Recursos</h5>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Casos de Éxito</a>
+                    <a href="#" class="footer-link">Documentación</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h5 class="footer-title">Legal</h5>
+                    <a href="#" class="footer-link">Términos</a>
+                    <a href="#" class="footer-link">Privacidad</a>
+                    <a href="#" class="footer-link">Cookies</a>
+                </div>
+            </div>
+            
+            <hr style="border-color: rgba(0, 240, 255, 0.2); margin: 40px 0 30px;">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0" style="color: rgba(255, 255, 255, 0.6);">© 2026 Chasky Soft S.R.L. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0" style="color: rgba(255, 255, 255, 0.6);">Tingo María, Huánuco - Perú</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
