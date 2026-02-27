@@ -493,82 +493,6 @@
             font-weight: 600;
         }
         
-        /* ===== TEAM CARDS ===== */
-        .team-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .team-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.05), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-        }
-        
-        .team-card:hover::after {
-            left: 100%;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 15px 50px rgba(0, 240, 255, 0.4);
-        }
-        
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            border: 3px solid rgba(0, 240, 255, 0.5);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .team-name {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--neon-cyan);
-        }
-        
-        .team-role {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            margin-bottom: 15px;
-        }
-        
-        .team-area {
-            background: rgba(0, 240, 255, 0.15);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 10px;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-        }
-        
         /* ===== STATS ===== */
         .stats-section {
             background: linear-gradient(135deg, rgba(0, 128, 255, 0.05), rgba(128, 0, 255, 0.05));
@@ -596,6 +520,30 @@
             font-size: clamp(1rem, 2vw, 1.3rem);
             color: rgba(255, 255, 255, 0.8);
             font-weight: 500;
+        }
+        
+        /* ===== CLIENT LOGOS ===== */
+        .client-logo {
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .client-logo i {
+            transition: all 0.3s;
+        }
+
+        .glass-card:hover .client-logo i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .client-logo h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .client-logo .text-muted {
+            color: rgba(255, 255, 255, 0.5) !important;
         }
         
         /* ===== FORM CONTROLS ===== */
@@ -745,6 +693,7 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clients">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#frameworks">Frameworks</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     <li class="nav-item mt-3 mt-lg-0">
@@ -755,7 +704,7 @@
         </div>
     </nav>
 
-    <!-- Hero Slider Section - CORREGIDO -->
+    <!-- Hero Slider Section -->
     <section id="home" class="hero-section p-0">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
             <div class="carousel-indicators">
@@ -845,40 +794,20 @@
             </div>
 
             <div class="row mt-5">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="col-12" data-aos="fade-right">
                     <h3 class="mb-4" style="color: var(--neon-cyan);">Información Corporativa</h3>
-                    <div class="info-badge"><strong>Razón Social:</strong> Chasky Soft S.R.L.</div>
-                    <div class="info-badge"><strong>RUC:</strong> 20615464768</div>
-                    <div class="info-badge"><strong>Tipo:</strong> S.R.L</div>
-                    <div class="info-badge"><strong>Domicilio:</strong> Tingo María, Rupa Rupa, Leoncio Prado, Huánuco - Perú</div>
-                    <div class="info-badge"><strong>Constitución:</strong> 29 de Enero de 2026</div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-4" style="color: var(--neon-cyan);">Estructura Legal y Socios</h3>
-                    <div class="glass-card">
-                        <h5 class="mb-3"><i class="fas fa-users me-2"></i>Socios Fundadores</h5>
-                        <div class="mb-3">
-                            <strong style="color: var(--neon-cyan);">Giovanni Kuennen Perez Espinoza</strong>
-                            <p class="mb-1"><small>Socio - Gerente General (50%)</small></p>
-                            <p class="mb-0"><small>DNI: 71881893 | Ingeniero de Sistemas</small></p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="info-badge"><strong>Razón Social:</strong> Chasky Soft S.R.L.</div>
                         </div>
-                        <hr style="border-color: rgba(0, 240, 255, 0.2);">
-                        <div>
-                            <strong style="color: var(--neon-cyan);">John Deivis Martin Pardo</strong>
-                            <p class="mb-1"><small>Socio (50%)</small></p>
-                            <p class="mb-0"><small>DNI: 46865665 | Ingeniero de Sistemas</small></p>
+                        <div class="col-md-6">
+                            <div class="info-badge"><strong>RUC:</strong> 20615464768</div>
                         </div>
-                    </div>
-                    
-                    <div class="glass-card mt-4">
-                        <h5 class="mb-3"><i class="fas fa-balance-scale me-2"></i>Equipo Legal y Contable</h5>
-                        <div class="mb-2">
-                            <i class="fas fa-gavel me-2" style="color: var(--neon-cyan);"></i>
-                            <strong>Doris Elizabeth Perez Espinoza</strong> - Asesoría Legal
+                        <div class="col-md-6">
+                            <div class="info-badge"><strong>Tipo:</strong> Sociedad Comercial de Responsabilidad Limitada</div>
                         </div>
-                        <div>
-                            <i class="fas fa-calculator me-2" style="color: var(--neon-cyan);"></i>
-                            <strong>Edith Nora Perez Espinoza</strong> - Contabilidad
+                        <div class="col-md-6">
+                            <div class="info-badge"><strong>Domicilio:</strong> Tingo María, Huánuco - Perú</div>
                         </div>
                     </div>
                 </div>
@@ -935,13 +864,37 @@
                 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="glass-card text-center">
-                        <div class="card-icon"><i class="fas fa-cloud"></i></div>
-                        <h4 class="mb-3">Cloud Computing</h4>
-                        <p>Hosting, servidores, bases de datos y soluciones AWS, Azure y Google Cloud.</p>
+                        <div class="card-icon"><i class="fas fa-draw-polygon"></i></div>
+                        <h4 class="mb-3">Arquitectura Hexagonal</h4>
+                        <p>Diseño de software con arquitectura hexagonal (puertos y adaptadores) para máxima flexibilidad y mantenibilidad.</p>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                        <h4 class="mb-3">Clean Architecture</h4>
+                        <p>Implementación de arquitectura limpia con separación de responsabilidades, SOLID y domain-driven design.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-cubes"></i></div>
+                        <h4 class="mb-3">Microservicios</h4>
+                        <p>Arquitectura de microservicios escalables con Docker, Kubernetes, API Gateway y service mesh.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                        <h4 class="mb-3">Cloud Computing</h4>
+                        <p>Hosting, servidores, bases de datos y soluciones AWS, Azure y Google Cloud Platform.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                     <div class="glass-card text-center">
                         <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                         <h4 class="mb-3">Ciberseguridad</h4>
@@ -949,34 +902,107 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                     <div class="glass-card text-center">
                         <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
                         <h4 class="mb-3">Consultoría TI</h4>
-                        <p>Transformación digital, automatización de procesos y arquitectura de software.</p>
+                        <p>Transformación digital, automatización de procesos y modernización de sistemas legacy.</p>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
                     <div class="glass-card text-center">
                         <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h4 class="mb-3">Aplicaciones Móviles</h4>
-                        <p>Apps nativas y multiplataforma para iOS y Android.</p>
+                        <p>Apps nativas y multiplataforma para iOS y Android con Flutter, React Native y Swift.</p>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
                     <div class="glass-card text-center">
                         <div class="card-icon"><i class="fas fa-database"></i></div>
                         <h4 class="mb-3">Big Data & Analytics</h4>
-                        <p>Análisis de datos, business intelligence y visualización de información.</p>
+                        <p>Análisis de datos, business intelligence, machine learning y visualización de información.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4 class="mb-3">Domain-Driven Design</h4>
+                        <p>Modelado de dominio, bounded contexts, aggregates y event-driven architecture para sistemas complejos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h4 class="mb-3">DevOps & CI/CD</h4>
+                        <p>Integración y despliegue continuo, automatización de pipelines, monitoreo y observabilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="glass-card text-center">
+                        <div class="card-icon"><i class="fas fa-server"></i></div>
+                        <h4 class="mb-3">API REST & GraphQL</h4>
+                        <p>Diseño e implementación de APIs RESTful, GraphQL, gRPC y WebSockets para comunicación eficiente.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Clients Section -->
+    <section id="clients" style="background: rgba(0, 128, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestros Clientes</h2>
+            <p class="section-subtitle" data-aos="fade-up">Empresas e instituciones que confían en nosotros</p>
+            
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="glass-card text-center">
+                        <div class="client-logo">
+                            <i class="fas fa-university fa-3x" style="color: var(--neon-cyan);"></i>
+                            <h5 class="mt-3 mb-0">Universidad Nacional Agraria de la Selva</h5>
+                            <p class="small text-muted mt-2">UNAS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="glass-card text-center">
+                        <div class="client-logo">
+                            <i class="fas fa-fist-raised fa-3x" style="color: var(--neon-blue);"></i>
+                            <h5 class="mt-3 mb-0">Dojo Elite Contreras</h5>
+                            <p class="small text-muted mt-2">Artes Marciales</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="glass-card text-center">
+                        <div class="client-logo">
+                            <i class="fas fa-users fa-3x" style="color: var(--neon-purple);"></i>
+                            <h5 class="mt-3 mb-0">Team Olivera</h5>
+                            <p class="small text-muted mt-2">Deportes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card p-5">
+                        <h3 class="mb-3" style="color: var(--neon-cyan);">¿Quieres ser nuestro próximo cliente?</h3>
+                        <p class="mb-4">Únete a las empresas e instituciones que ya transformaron su negocio con nuestras soluciones tecnológicas</p>
+                        <a href="#contact" class="btn btn-futuristic btn-lg">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Frameworks Section -->
     <section id="frameworks">
@@ -1021,75 +1047,93 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background: rgba(0, 128, 255, 0.02);">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
-            <p class="section-subtitle" data-aos="fade-up">Estamos listos para impulsar tu transformación digital</p>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-right">
-                    <div class="glass-card mb-4">
-                        <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <h5>Ubicación</h5>
-                        <p>Tingo María, Rupa Rupa<br>Leoncio Prado, Huánuco<br>Perú</p>
-                    </div>
-                    
-                    <div class="glass-card mb-4">
-                        <div class="card-icon"><i class="fas fa-phone"></i></div>
-                        <h5>Teléfono</h5>
-                        <p>+51 910 731 863<br>
-                    </div>
-                    
-                    <div class="glass-card">
-                        <div class="card-icon"><i class="fas fa-envelope"></i></div>
-                        <h5>Email</h5>
-                        soporte@chaskysoft.com</p>
-                    </div>
+    <!-- Contact Section - CORREGIDA -->
+<!-- Contact Info Section -->
+<section id="contact" style="background: rgba(0, 128, 255, 0.02); padding: 80px 0 40px 0;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
+        <p class="section-subtitle" data-aos="fade-up">Estamos listos para impulsar tu transformación digital</p>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card text-center">
+                    <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h5>Ubicación</h5>
+                    <p>Tingo María, Rupa Rupa<br>Leoncio Prado, Huánuco<br>Perú</p>
                 </div>
-                
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="glass-card">
-                        <h4 class="mb-4">Solicita una Cotización</h4>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nombre completo" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control" placeholder="Teléfono">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Empresa">
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select">
-                                        <option selected>Selecciona un servicio</option>
-                                        <option>Desarrollo de Software</option>
-                                        <option>Cloud Computing</option>
-                                        <option>Ciberseguridad</option>
-                                        <option>Consultoría TI</option>
-                                        <option>Aplicaciones Móviles</option>
-                                        <option>Otro</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Describe tu proyecto"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-futuristic btn-lg w-100">
-                                        <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card text-center">
+                    <div class="card-icon"><i class="fas fa-phone"></i></div>
+                    <h5>Teléfono</h5>
+                    <p>+51 910 731 863</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="glass-card text-center">
+                    <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                    <h5>Email</h5>
+                    <p>soporte@chaskysoft.com</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Form Section -->
+<section id="cotizacion" style="padding: 40px 0 100px 0;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="glass-card">
+                    <h3 class="mb-2 text-center" style="color: var(--neon-cyan);">Solicita una Cotización</h3>
+                    <p class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7);">Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas</p>
+                    
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Teléfono">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Empresa">
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select">
+                                    <option selected>Selecciona un servicio</option>
+                                    <option>Desarrollo de Software</option>
+                                    <option>Arquitectura Hexagonal</option>
+                                    <option>Clean Architecture</option>
+                                    <option>Microservicios</option>
+                                    <option>Cloud Computing</option>
+                                    <option>Ciberseguridad</option>
+                                    <option>Consultoría TI</option>
+                                    <option>DevOps & CI/CD</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="5" placeholder="Describe tu proyecto o necesidad"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-futuristic btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -1111,7 +1155,8 @@
                 <div class="col-lg-2 col-md-4 col-6">
                     <h5 class="footer-title">Empresa</h5>
                     <a href="#about" class="footer-link">Nosotros</a>
-                    <a href="#team" class="footer-link">Equipo</a>
+                    <a href="#services" class="footer-link">Servicios</a>
+                    <a href="#clients" class="footer-link">Clientes</a>
                     <a href="#frameworks" class="footer-link">Frameworks</a>
                 </div>
                 
@@ -1120,7 +1165,7 @@
                     <a href="#services" class="footer-link">Desarrollo Web</a>
                     <a href="#services" class="footer-link">Apps Móviles</a>
                     <a href="#services" class="footer-link">Cloud</a>
-                    <a href="#services" class="footer-link">Ciberseguridad</a>
+                    <a href="#services" class="footer-link">Microservicios</a>
                 </div>
                 
                 <div class="col-lg-2 col-md-4 col-6">
